@@ -91,17 +91,14 @@ summary(model.rw1)$random.model
 summary(model.rw1)$hyperpar
 head(summary(model.rw1)$linear.predictor)
 
-sigma2.v.dist <- inla.tmarginal(
-  fun = function(x)
-    exp(-x),
-  marginal = model.rw1$
-    internal.marginals.hyperpar$`Log precision for the Gaussian observations`
-)
+abline(v = -0.06686987)
 plot(
-  sigma2.v.dist,
+  density(phis[3, ]),
   type = "l",
-  xlab = expression(paste(
-    "Observation noise variance ", sigma[v] ^ 2, sep = " "
-  )),
+  main="",
+  xlab = expression(phi[3]),
   ylab = "density"
 )
+abline(v=-0.02494843)
+
+# cambios
